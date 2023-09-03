@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: ['prettier-plugin-astro'],
   semi: true,
   trailingComma: "none",
   singleQuote: true,
