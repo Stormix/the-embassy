@@ -1,24 +1,10 @@
 ---
-interface PillProps {
-  variant: "blue" | "red"
+interface Props {
+  class?: string;
 }
-
-const {variant, class: className} = Astro.props;
-const image = variant === "blue" ? "bg-design": "bg-code";
-const position = variant === "blue" ? "bg-[center_bottom_-9rem]": "bg-center";
+const { class: className } = Astro.props;
 ---
 
-
-<div class:list={["rounded-[100px] bg-no-repeat bg-cover pill", position, image]} />
-
-<style lang="scss">
-  .pill {
-    height: 86px;
-    width: 320px;
-    
-    @media (min-width: 1441px) {
-      height: 96px;
-      width: 400px;
-    }
-  }
-</style>
+<div class:list={['rounded-[100px] px-3 py-2 border border-secondary', className]}>
+  <slot />
+</div>

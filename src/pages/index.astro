@@ -1,17 +1,43 @@
 ---
+import ExploreMore from '../components/ExploreMore.astro';
 import Hero from '../components/Hero.astro';
 import Navbar from '../components/Navbar.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 import { APP_NAME } from '../config/app';
 import Layout from '../layouts/Layout.astro';
 
-
-const title = `${APP_NAME} - Home`
+const title = `${APP_NAME} - Home`;
 ---
 
 <Layout title={title}>
-  <main>
+  <main class="overflow-x-hidden">
     <Hero>
-      <Navbar class="absolute top-0 left-0 w-full"/>
+      <Navbar class="absolute top-0 left-0 w-full" />
     </Hero>
+    <div class="p-8 gap-y-8">
+      <ProjectCard
+        title="Venus Case Study"
+        author="Jonathon Hamid"
+        categories={['Case Study', 'UI/UX Design']}
+        link="/case-study/venus"
+        image="/images/project-1.png"
+      />
+      <ProjectCard
+        title="Venus Case Study"
+        author="Jonathon Hamid"
+        categories={['Case Study', 'UI/UX Design']}
+        link="/case-study/venus"
+        image="/images/project-1.png"
+      />
+      <ProjectCard
+        title="Venus Case Study"
+        author="Jonathon Hamid"
+        categories={['Case Study', 'UI/UX Design']}
+        link="/case-study/venus"
+        image="/images/project-1.png"
+      />
+
+      <ExploreMore />
+    </div>
   </main>
 </Layout>

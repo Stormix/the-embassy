@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
-import Pill from './Pill.astro';
+import HeroPill from './HeroPill.astro';
 ---
 <div class="h-screen w-screen hero relative">
   <div class="hero__base" />
@@ -11,14 +11,26 @@ import Pill from './Pill.astro';
 
   <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col gap-4 text-justify">
     <span>The future is built</span>
-    <div class="flex gap-4 xl:gap-8 items-center w-full"><Icon name="separator" class="w-24" /><span>by code</span> <Pill variant="red" /><Icon name="smiley" class="w-24" /></div>
-    <div class="flex gap-4 xl:gap-8 items-center"> <span>&</span><Pill variant="blue" /><span>creativity</span></div>
+    <div class="flex gap-4 xl:gap-8 items-center w-full"><Icon name="separator" class="w-24" /><span>by code</span> <HeroPill variant="red" /><Icon name="smiley" class="w-24" /></div>
+    <div class="flex gap-4 xl:gap-8 items-center"> <span>&</span><HeroPill variant="blue" /><span>creativity</span></div>
+  </div>
+
+  <div class="absolute bottom-0 flex justify-between px-8 py-4 w-full">
+    <div class="text-sm uppercase text-secondary leading-5">
+      <p>we create</p>
+      <p>together</p>
+      <p>@theembassy</p>
+    </div>
+
+    <Icon name="down" class="w-12 h-12 animate-pulse" />
   </div>
 </div>
 
 
 <style lang="scss">
   .hero {
+    overflow: hidden;
+
     &__base {
       position: absolute;
       top: 0;
@@ -30,7 +42,8 @@ import Pill from './Pill.astro';
       background-color: lightgray;
       mix-blend-mode: luminosity;
       height: 100%;
-      width: 100%;
+      width: 100%; 
+      transform: scale(1.2);
     }
     &__filter {
       position: absolute;

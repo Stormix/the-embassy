@@ -1,0 +1,28 @@
+---
+import Pill from './Pill.astro';
+
+interface Props {
+  title: string;
+  author: string;
+  categories: string[];
+  link: string;
+  image: string;
+}
+
+const { title, author, categories, link, image } = Astro.props;
+---
+
+<div class="border-t border-secondary/40 py-8 flex flex-col w-full pt-8">
+  <div class="flex justify-between">
+    <div>
+      <h3 class="text-2xl capitalize">{title}</h3>
+      <p class="text-secondary">By <span>{author}</span></p>
+    </div>
+
+    <div class="flex items-center gap-4">
+      {categories.map((category) => <Pill>{category} </Pill>)}
+    </div>
+  </div>
+
+  <img src={image} alt={title} class="w-full h-[580px] object-cover mt-8 rounded-lg" />
+</div>

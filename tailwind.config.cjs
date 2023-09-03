@@ -16,7 +16,7 @@ module.exports = {
       backgroundImage: {
         'code': "url('/images/code.gif')",
         'design': "url('/images/design.gif')",
-      }
+      },
     }
   },
   plugins: []

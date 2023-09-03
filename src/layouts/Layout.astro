@@ -16,8 +16,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   </head>
   <body>
     <slot />
@@ -37,5 +36,26 @@ const { title } = Astro.props;
   }
   html {
     @apply bg-background text-primary font-sans;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #fff #fff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 0px;
+    border: 1px solid transparent;
   }
 </style>
