@@ -1,0 +1,69 @@
+---
+import { Icon } from 'astro-icon';
+import Pill from './Pill.astro';
+---
+<div class="h-screen w-screen hero relative">
+  <div class="hero__base" />
+  <div class="hero__filter" />
+  <div class="hero__noise" />
+  
+  <slot />
+
+  <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col gap-4 text-justify">
+    <span>The future is built</span>
+    <div class="flex gap-4 xl:gap-8 items-center w-full"><Icon name="separator" class="w-24" /><span>by code</span> <Pill variant="red" /><Icon name="smiley" class="w-24" /></div>
+    <div class="flex gap-4 xl:gap-8 items-center"> <span>&</span><Pill variant="blue" /><span>creativity</span></div>
+  </div>
+</div>
+
+
+<style lang="scss">
+  .hero {
+    &__base {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url("/images/hero.jpeg");
+      background-position: 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: lightgray;
+      mix-blend-mode: luminosity;
+      height: 100%;
+      width: 100%;
+    }
+    &__filter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(20, 20, 20, 0.85);
+      backdrop-filter: blur(6px);
+      height: 100%;
+      width: 100%;
+    }
+
+    &__noise {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.18;
+      background: url("/images/noise.jpeg"), lightgray 0% 0% / 43px 43px repeat;
+      mix-blend-mode: color-dodge;
+    }
+
+    span {
+      font-size: 96px;
+      font-weight: 400;
+      line-height: 112px; /* 116.667% */
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      @media (min-width: 1441px) {
+        font-size: 128px;
+        line-height: 144px;
+      }
+    }
+
+  }
+
+</style>

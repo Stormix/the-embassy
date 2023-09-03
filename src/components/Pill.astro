@@ -1,0 +1,14 @@
+---
+interface PillProps {
+  variant: "blue" | "red"
+}
+
+const {variant} = Astro.props;
+const image = variant === "blue" ? "bg-design": "bg-code";
+const position = variant === "blue" ? "bg-[center_bottom_-9rem]": "bg-center";
+---
+
+
+<div class:list={["rounded-[100px] h-20 w-80 bg-no-repeat bg-cover", position, image]}>
+
+</div>
