@@ -1,0 +1,35 @@
+---
+import MemberCard, { type Member } from './MemberCard.astro';
+
+const members: Member[] = [...Array(8).keys()].map((i) => ({
+  name: `Johnathan Hamid ${i}`,
+  role: 'UI/UX Designer, Graphic Designer',
+  image:
+    'https://images.unsplash.com/photo-1613909207039-6b173b755cc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2747&q=80',
+  socials: [
+    {
+      name: 'linkedin',
+      icon: 'linkedin',
+      url: 'https://www.linkedin.com/in/johnathanhamid/'
+    },
+    {
+      name: 'instagram',
+      icon: 'instagram',
+      url: 'https://www.instagram.com/johnathanhamid/'
+    },
+    {
+      name: 'twitter',
+      icon: 'twitter',
+      url: 'https://twitter.com/johnathanhamid'
+    }
+  ]
+}));
+---
+
+<div class="mx-auto container flex flex-col w-full justify-center mt-24 text-center">
+  <h2 class="font-medium text-5xl uppercase">connect with our talented members</h2>
+
+  <div class="grid grid-cols-4 gap-8 mt-24">
+    {members.map((member) => <MemberCard member={member} />)}
+  </div>
+</div>

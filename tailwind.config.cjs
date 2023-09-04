@@ -7,7 +7,8 @@ module.exports = {
     colors: {
       background: 'rgb(var(--background) / <alpha-value>)',
       primary: 'rgb(var(--primary) / <alpha-value>)',
-      secondary: 'rgb(var(--secondary) / <alpha-value>)'
+      secondary: 'rgb(var(--secondary) / <alpha-value>)',
+      accent: 'rgb(var(--accent) / <alpha-value>)',
     },
     extend: {
       fontFamily: {
