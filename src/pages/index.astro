@@ -1,9 +1,13 @@
 ---
+import About from '../components/About.astro';
+import CTA from '../components/CTA.astro';
 import ExploreMore from '../components/ExploreMore.astro';
+import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import Members from '../components/Members.astro';
 import Navbar from '../components/Navbar.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import FAQ from '../components/react/FAQ';
 import { APP_NAME } from '../config/app';
 import Layout from '../layouts/Layout.astro';
 
@@ -15,7 +19,7 @@ const title = `${APP_NAME} - Home`;
     <Hero>
       <Navbar class="absolute top-0 left-0 w-full" />
     </Hero>
-    <div class="p-8 gap-y-8">
+    <div class="flex flex-col p-8 gap-y-8">
       <ProjectCard
         title="Venus Case Study"
         author="Jonathon Hamid"
@@ -39,8 +43,12 @@ const title = `${APP_NAME} - Home`;
       />
 
       <ExploreMore />
-
       <Members />
+
+      <CTA />
+      <About />
+      <FAQ client:only="react" />
+      <Footer />
     </div>
   </main>
 </Layout>

@@ -1,0 +1,37 @@
+---
+import { GitHubLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
+const navigation = {
+  main: [
+    { name: 'About', href: '#' },
+    { name: 'Contact', href: '#' },
+    { name: 'Jobs', href: '#' },
+    { name: 'Collection', href: '#' },
+    { name: 'Talents', href: '#' }
+  ]
+};
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+    <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+      {
+        navigation.main.map((item) => (
+          <div class="pb-6">
+            <a href={item.href} class="text-sm leading-6 text-secondary hover:accent uppercase">
+              #{item.name}
+            </a>
+          </div>
+        ))
+      }
+    </nav>
+    <div class="mt-10 flex justify-center space-x-10">
+      <TwitterLogoIcon className="w-6 h-6 text-secondary hover:text-accent cursor-pointer" />
+      <GitHubLogoIcon className="w-6 h-6 text-secondary hover:text-accent cursor-pointer" />
+    </div>
+    <p class="mt-10 text-center text-xs leading-5 text-gray-500">
+      &copy; <b>{year}</b>. All rights reserved.
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,45 @@
+---
+const socials = [
+  {
+    name: 'instagram',
+    url: '#'
+  },
+  {
+    name: 'facebook',
+    url: '#'
+  },
+  {
+    name: 'twitter',
+    url: '#'
+  },
+  {
+    name: 'youtube',
+    url: '#'
+  }
+];
+---
+
+<div class="grid grid-cols-2 py-8 my-36 container mx-auto gap-20 w-full">
+  <div class="flex justify-between flex-col pr-12">
+    <h3 class="text-5xl uppercase leading-relaxed">get to know the embassy</h3>
+    <div class="flex gap-8">
+      {
+        socials.map((social) => (
+          <a href={social.url} target="_blank" class="uppercase text-secondary text-sm">
+            #{social.name}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+  <div class="leading-8 flex-col flex gap-4">
+    <p>
+      Lorem ipsum dolor sit amet consectetur. Donec egestas fermentum faucibus egestas eget in nisl viverra. Non diam
+      enim orci hendrerit ornare et. Aliquam pretium cras integer sed cursus quis quam nibh.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur. Donec egestas fermentum faucibus egestas eget in nisl viverra. Non diam
+      enim orci hendrerit ornare et. Aliquam pretium cras integer sed cursus quis quam nibh.
+    </p>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 ---
+import Icon from 'astro-icon';
 import MemberCard, { type Member } from './MemberCard.astro';
+import Button from './react/Button';
 
 const members: Member[] = [...Array(8).keys()].map((i) => ({
   name: `Johnathan Hamid ${i}`,
@@ -29,7 +31,13 @@ const members: Member[] = [...Array(8).keys()].map((i) => ({
 <div class="mx-auto container flex flex-col w-full justify-center mt-24 text-center">
   <h2 class="font-medium text-5xl uppercase">connect with our talented members</h2>
 
-  <div class="grid grid-cols-4 gap-8 mt-24">
+  <div class="grid grid-cols-4 gap-8 my-24">
     {members.map((member) => <MemberCard member={member} />)}
+  </div>
+  <div class="flex uppercase">
+    <Button asLink href="/members" className="gap-4 flex items-center cursor-pointer mx-auto">
+      <p>See the full list of members</p>
+      <Icon name="arrow-right" class="w-4 h-4 animate-pulse" />
+    </Button>
   </div>
 </div>
